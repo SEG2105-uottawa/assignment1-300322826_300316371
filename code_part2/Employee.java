@@ -27,13 +27,5 @@ public class Employee {
         return "Name: " + name + ", Hours: " + hours + ", Rate: " + rate + ", Primary Address: " + address[0];
     }
 
-    //Insert Partial Constructors
 
-    /*
-    public static void main(String[] args){
-        Employee joe = new Employee();
-        System.out.println(joe.hours);
-        System.out.println("JoeWeeMamma");
-    }
-    */
-}
+   
