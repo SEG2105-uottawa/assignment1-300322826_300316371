@@ -2,7 +2,7 @@ public class Employee {
 
     // Declaring the attributes
     private String name;
-    //used double for hours since it is possible to work half hours
+    //double to suit half hours
     private double hours;
     private double rate;
     private Address[] address;
