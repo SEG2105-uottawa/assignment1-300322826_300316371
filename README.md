@@ -1,1 +1,3 @@
-# assignment1-300322826_300316371
+Git Repo for SEG2105 Summer 2023 Assignment 1 
+Abhay Ariyappillil
+Sum Yan Wan
