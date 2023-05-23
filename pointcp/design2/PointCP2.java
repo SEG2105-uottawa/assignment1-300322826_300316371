@@ -46,12 +46,12 @@ public class PointCP2 {
 
     public double getRho()
     {
-        return (Math.sqrt(Math.pow(rho, 2) + Math.pow(theta, 2)));
+        return (rho);
     }
 
     public double getTheta()
     {
-        return Math.toDegrees(Math.atan2(theta, rho));
+        return theta;
     }
 
     /**
