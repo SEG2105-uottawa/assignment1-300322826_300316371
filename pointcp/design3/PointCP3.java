@@ -6,7 +6,7 @@
  *
  * Edited base on the class PointCP.java
  */
-public class PointCP3 {
+public class PointCP3 extends PointCP5{
     //Instance variables ************************************************
 
 
@@ -64,13 +64,13 @@ public class PointCP3 {
      * @param rotation The number of degrees to rotate the point.
      * @return The rotated image of the original point.
      */
-    public PointCP2 rotatePoint(double rotation)
+    public PointCP5 rotatePoint(double rotation)
     {
         double radRotation = Math.toRadians(rotation);
         double X = getX();
         double Y = getY();
 
-        return new PointCP2(
+        return new PointCP3(
                 (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
                 (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
     }
