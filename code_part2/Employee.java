@@ -1,47 +1,28 @@
-public class Address {
+public class Employee {
 
-    //instance variables
-    private String street;
-    private int number;
-    private String postal;
+    // Declaring the attributes
+    private String name;
+    //double to suit half hours
+    private double hours;
+    private double rate;
+    private Address[] address;
 
-    public Address(String street, int number, String postal){
-        this.street = street;
-        this.number = number;
-        this.postal = postal;
+    //default constructor
+    public Employee(){
+        this.name = "John Doe";
+        this.hours = 0.0;
+        this.rate = 0.0;
+        this.address = null;
     }
 
-
-    //getters
-    public String getStreet(){
-        return this.street;
+    // main constructor
+    public Employee(String name, double hours, double rate, Address[] address) {
+        this.name = name;
+        this.hours = hours;
+        this.rate = rate;
+        this.address = address;
     }
-
-    public int getNumber(){
-        return this.number;
-    }
-
-    public String getPostal(){
-        return this.postal;
-    }
-
-
-    //setters
-    public void setStreet(String street){
-        this.street = street;
-    }
-
-    public void setNumber(int number){
-        this.number = number;
-    }
-
-    public void setPostal(String postal){
-        this.postal = postal;
-    }
-
 
     public String toString(){
-        return number + " " + street + " Street, " + postal;
+        return "Name: " + name + ", Hours: " + hours + ", Rate: " + rate + ", Primary Address: " + address[0];
     }
-
-}
