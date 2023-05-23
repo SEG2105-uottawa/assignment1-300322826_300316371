@@ -7,7 +7,7 @@
  * Edited base on the class PointCP.java
  */
 
-public class PointCP2 {
+public class PointCP2 extends PointCP5 {
 
     //Instance variables ************************************************
 
@@ -23,34 +23,30 @@ public class PointCP2 {
     private double theta;
 
     //Constructors ******************************************************
+
     /**
      * Constructs a coordinate object
      */
-    public PointCP2(double rho, double theta)
-    {
+    public PointCP2(double rho, double theta) {
         this.rho = rho;
         this.theta = theta;
     }
 
     //Instance methods **************************************************
 
-    public double getX()
-    {
+    public double getX() {
         return (Math.cos(Math.toRadians(theta)) * rho);
     }
 
-    public double getY()
-    {
+    public double getY() {
         return (Math.sin(Math.toRadians(theta)) * rho);
     }
 
-    public double getRho()
-    {
+    public double getRho() {
         return (rho);
     }
 
-    public double getTheta()
-    {
+    public double getTheta() {
         return theta;
     }
 
@@ -62,8 +58,7 @@ public class PointCP2 {
      * @param pointB The second point.
      * @return The distance between the two points.
      */
-    public double getDistance(PointCP2 pointB)
-    {
+    public double getDistance(PointCP2 pointB) {
         // Obtain differences in X and Y, sign is not important as these values
         // will be squared later.
         double deltaX = getX() - pointB.getX();
@@ -71,6 +66,7 @@ public class PointCP2 {
 
         return Math.sqrt((Math.pow(deltaX, 2) + Math.pow(deltaY, 2)));
     }
+
 
     /**
      * Rotates the specified point by the specified number of degrees.
@@ -80,15 +76,15 @@ public class PointCP2 {
      * @param rotation The number of degrees to rotate the point.
      * @return The rotated image of the original point.
      */
-    public PointCP2 rotatePoint(double rotation)
-    {
+    public PointCP5 rotatePoint(double rotation) {
         double radRotation = Math.toRadians(rotation);
-        double X = getX();
-        double Y = getY();
+        double x = getX();
+        double y = getY();
 
         return new PointCP2(
-                (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
-                (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
+                (Math.cos(radRotation) * x) - (Math.sin(radRotation) * y),
+                (Math.sin(radRotation) * x) + (Math.cos(radRotation) * y)
+        );
     }
 
     /**
