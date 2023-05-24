@@ -1,5 +1,5 @@
 public abstract class PointCP5 {
-
+    
     public abstract double getX();
 
     public abstract double getY();
@@ -9,6 +9,8 @@ public abstract class PointCP5 {
     public abstract double getTheta();
 
     public abstract PointCP5 rotatePoint(double rotation);
+
+    public abstract double getDistance(PointCP5 point);
 
     public abstract String toString();
 
