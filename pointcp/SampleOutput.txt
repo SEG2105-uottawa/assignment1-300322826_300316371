@@ -1,0 +1,74 @@
+****** PointCP  Polar ******
+*  Elapsed time for getX() in PointCP: 266 ms
+*  Elapsed time for getY() in PointCP: 231 ms
+*  Elapsed time for getRho() in PointCP: 3 ms
+*  Elapsed time for getTheta() in PointCP: 3 ms
+*  Elapsed time for getDistance() in PointCP: 904 ms
+*  Elapsed time for rotatePoint() in PointCP: 1277 ms
+
+*  Total time for pointCP: 2684 ms
+****** PointCP Polar ******
+
+
+****** PointCP Cartesian ******
+*  Elapsed time for getX() in PointCP: 12 ms
+*  Elapsed time for getY() in PointCP: 31 ms
+*  Elapsed time for getRho() in PointCP: 15 ms
+*  Elapsed time for getTheta() in PointCP: 1241 ms
+*  Elapsed time for getDistance() in PointCP: 7 ms
+*  Elapsed time for rotatePoint() in PointCP: 770 ms
+
+*  Total time for pointCP: 2076 ms
+****** PointCP  Cartesian ******
+
+
+****** PointCP2 ******
+*  Elapsed time for getX() in PointCP2: 239 ms
+*  Elapsed time for getY() in PointCP2: 209 ms
+*  Elapsed time for getRho() in PointCP2: 2 ms
+*  Elapsed time for getTheta() in PointCP2: 2 ms
+*  Elapsed time for getDistance() in PointCP2: 802 ms
+*  Elapsed time for rotatePoint() in PointCP2: 1233 ms
+
+*  Total time for pointCP2: 2487 ms
+****** PointCP2 ******
+
+
+****** PointCP3 ******
+*  Elapsed time for getX() in PointCP3: 3 ms
+*  Elapsed time for getY() in PointCP3: 2 ms
+*  Elapsed time for getRho() in PointCP3: 2 ms
+*  Elapsed time for getTheta() in PointCP3: 1154 ms
+*  Elapsed time for getDistance() in PointCP3: 3 ms
+*  Elapsed time for rotatePoint() in PointCP3: 800 ms
+
+*  Total time for pointCP3: 1964 ms
+****** PointCP3 ******
+
+
+****** PointCP5 Polar ******
+*  Elapsed time for getX() in PointCP2: 239 ms
+*  Elapsed time for getY() in PointCP2: 209 ms
+*  Elapsed time for getRho() in PointCP2: 3 ms
+*  Elapsed time for getTheta() in PointCP2: 2 ms
+*  Elapsed time for getDistance() in PointCP2: 805 ms
+*  Elapsed time for rotatePoint() in PointCP2: 1290 ms
+
+*  Total time for pointCP2: 2548 ms
+****** PointCP5 Polar ******
+
+
+****** PointCP5 Cartesian ******
+*  Elapsed time for getX() in PointCP3: 3 ms
+*  Elapsed time for getY() in PointCP3: 2 ms
+*  Elapsed time for getRho() in PointCP3: 2 ms
+*  Elapsed time for getTheta() in PointCP3: 1244 ms
+*  Elapsed time for getDistance() in PointCP3: 4 ms
+*  Elapsed time for rotatePoint() in PointCP3: 811 ms
+
+*  Total time for pointCP3: 2066 ms
+****** PointCP5 Cartesian ******
+
+
+Total run time of program: 14 s
+
