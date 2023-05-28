@@ -1,7 +1,7 @@
 import java.util.Random;
 
 /**
- * Test Performance of PointCP, PointCP2, and PointCP3
+ * Test Performance of PointCP, PointCP2, PointCP3, PointCP5
  */
 public class PerformanceTest {
 
@@ -13,18 +13,21 @@ public class PerformanceTest {
         PointCP point2 = new PointCP('P', random.nextDouble(), random.nextDouble());
         PointCP2 point3 = new PointCP2(random.nextDouble(), random.nextDouble());
         PointCP3 point4 = new PointCP3(random.nextDouble(), random.nextDouble());
+        PointCP5 point5 = new PointCP2(random.nextDouble(), random.nextDouble());
+        PointCP5 point6 = new PointCP3(random.nextDouble(), random.nextDouble());
         long startTime, endTime, runTime;
 
         startTime = System.currentTimeMillis();
-        // test PointCP (Cartesian)
-        System.out.println("****** PointCP Cartesian ******");
-        testPointCP(point1);
-        System.out.println("****** PointCP  Cartesian ******" + "\n" + "\n");
 
         // test PointCP (Polar)
         System.out.println("****** PointCP  Polar ******");
         testPointCP(point2);
         System.out.println("****** PointCP Polar ******" + "\n" + "\n");
+
+        // test PointCP (Cartesian)
+        System.out.println("****** PointCP Cartesian ******");
+        testPointCP(point1);
+        System.out.println("****** PointCP  Cartesian ******" + "\n" + "\n");
 
         // test PointCP2
         System.out.println("****** PointCP2 ******");
@@ -35,6 +38,16 @@ public class PerformanceTest {
         System.out.println("****** PointCP3 ******");
         testPointCP3(point4);
         System.out.println("****** PointCP3 ******" + "\n" + "\n");
+
+        // test PointCP5(Polar)
+        System.out.println("****** PointCP5 Polar ******");
+        testPointCP5Polar(point5);
+        System.out.println("****** PointCP5 Polar ******" + "\n" + "\n");
+
+        // test PointCP5(Cartesian)
+        System.out.println("****** PointCP5 Cartesian ******");
+        testPointCP5Cartesian(point6);
+        System.out.println("****** PointCP5 Cartesian ******" + "\n" + "\n");
 
         endTime = System.currentTimeMillis();
         runTime = (endTime - startTime)/1000;
@@ -113,7 +126,7 @@ public class PerformanceTest {
         System.out.println("*  Total time for pointCP: " + totalTime + " ms");
     }
 
-    public static void testPointCP2(PointCP5 point) {
+    public static void testPointCP2(PointCP2 point) {
         Random random = new Random();
         long startTime, endTime, elapsedTime, totalTime;
 
@@ -184,7 +197,7 @@ public class PerformanceTest {
         System.out.println("*  Total time for pointCP2: " + totalTime + " ms");
     }
 
-    public static void testPointCP3(PointCP5 point) {
+    public static void testPointCP3(PointCP3 point) {
         Random random = new Random();
         long startTime, endTime, elapsedTime, totalTime;
 
@@ -255,6 +268,147 @@ public class PerformanceTest {
         System.out.println("*  Total time for pointCP3: " + totalTime + " ms");
     }
 
+    public static void testPointCP5Polar(PointCP5 point) {
+        Random random = new Random();
+        long startTime, endTime, elapsedTime, totalTime;
+
+        double rotation = random.nextDouble();
+
+        // test time of getX()
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.getX();
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for getX() in PointCP2: " + elapsedTime + " ms");
+        totalTime = elapsedTime;
+
+        // test time of getY()
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.getY();
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for getY() in PointCP2: " + elapsedTime + " ms");
+        totalTime += elapsedTime;
+
+        // test time of getRho()
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.getRho();
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for getRho() in PointCP2: " + elapsedTime + " ms");
+        totalTime += elapsedTime;
+
+        // test time of getTheta()
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.getTheta();
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for getTheta() in PointCP2: " + elapsedTime + " ms");
+        totalTime += elapsedTime;
+
+        // test time of getDistance()
+        // `pointCP` type "Cartesian"
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.getDistance(point);
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for getDistance() in PointCP2: " + elapsedTime + " ms");
+        totalTime += elapsedTime;
+
+        // test time of rotatePoint()
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.rotatePoint(rotation);
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for rotatePoint() in PointCP2: " + elapsedTime + " ms");
+        totalTime += elapsedTime;
+
+        System.out.println();
+        System.out.println("*  Total time for pointCP2: " + totalTime + " ms");
+    }
+
+    public static void testPointCP5Cartesian(PointCP5 point) {
+        Random random = new Random();
+        long startTime, endTime, elapsedTime, totalTime;
+
+        double rotation = random.nextDouble();
+
+        // test time of getX()
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.getX();
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for getX() in PointCP3: " + elapsedTime + " ms");
+        totalTime = elapsedTime;
+
+        // test time of getY()
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.getY();
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for getY() in PointCP3: " + elapsedTime + " ms");
+        totalTime += elapsedTime;
+
+        // test time of getRho()
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.getRho();
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for getRho() in PointCP3: " + elapsedTime + " ms");
+        totalTime += elapsedTime;
+
+        // test time of getTheta()
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.getTheta();
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for getTheta() in PointCP3: " + elapsedTime + " ms");
+        totalTime += elapsedTime;
+
+        // test time of getDistance()
+        // `pointCP` type "Cartesian"
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.getDistance(point);
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for getDistance() in PointCP3: " + elapsedTime + " ms");
+        totalTime += elapsedTime;
+
+        // test time of rotatePoint()
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < ITERATIONS; i++) {
+            point.rotatePoint(rotation);
+        }
+        endTime = System.currentTimeMillis();
+        elapsedTime = endTime - startTime;
+        System.out.println("*  Elapsed time for rotatePoint() in PointCP3: " + elapsedTime + " ms");
+        totalTime += elapsedTime;
+
+        System.out.println();
+        System.out.println("*  Total time for pointCP3: " + totalTime + " ms");
+    }
 
 
 }
